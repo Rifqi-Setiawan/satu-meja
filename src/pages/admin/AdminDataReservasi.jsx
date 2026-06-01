@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { CheckCircle2, Clock, CalendarDays, Users, LayoutDashboard } from 'lucide-react';
-import AdminSidebar from '../../components/AdminSidebar';
+import AdminLayout from '../../components/AdminLayout';
 
 export default function AdminDataReservasi() {
   const { user, getRestaurant, reservations, updateReservationStatus, updateTableStatus, showToast } = useApp();
@@ -32,10 +32,7 @@ export default function AdminDataReservasi() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      <AdminSidebar />
-      
-      <div className="flex-1 ml-64 flex flex-col h-screen overflow-hidden">
+    <AdminLayout contentClassName="flex flex-col h-screen overflow-hidden">
         <div className="p-8 border-b border-gray-100 bg-white z-10">
           <div className="flex justify-between items-center mb-6">
             <div>
@@ -135,7 +132,6 @@ export default function AdminDataReservasi() {
             )}
           </div>
         </div>
-      </div>
-    </div>
+      </AdminLayout>
   );
 }

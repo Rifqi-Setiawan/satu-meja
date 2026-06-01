@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Plus, Trash2, UtensilsCrossed } from 'lucide-react';
-import AdminSidebar from '../../components/AdminSidebar';
+import AdminLayout from '../../components/AdminLayout';
 
 export default function AdminTempatDuduk() {
   const { user, getRestaurant, addTable, removeTable, showToast } = useApp();
@@ -30,10 +30,7 @@ export default function AdminTempatDuduk() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      <AdminSidebar />
-      
-      <div className="flex-1 ml-64 p-8">
+    <AdminLayout>
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-extrabold text-gray-900">Pengaturan Tempat Duduk</h1>
@@ -100,7 +97,6 @@ export default function AdminTempatDuduk() {
             </div>
           ))}
         </div>
-      </div>
-    </div>
+      </AdminLayout>
   );
 }

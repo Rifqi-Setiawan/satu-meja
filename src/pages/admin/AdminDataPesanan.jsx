@@ -2,7 +2,7 @@ import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { Receipt, ChefHat, Clock } from 'lucide-react';
 import { formatRupiah } from '../../data/mockData';
-import AdminSidebar from '../../components/AdminSidebar';
+import AdminLayout from '../../components/AdminLayout';
 
 export default function AdminDataPesanan() {
   const { user, getRestaurant, reservations } = useApp();
@@ -11,10 +11,7 @@ export default function AdminDataPesanan() {
   const activeOrders = reservations.filter(r => r.restaurantId === restaurant?.id && r.status === 'confirmed' && r.items && r.items.length > 0);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      <AdminSidebar />
-      
-      <div className="flex-1 ml-64 p-8 h-screen flex flex-col">
+    <AdminLayout contentClassName="h-screen flex flex-col">
         <div className="flex justify-between items-center mb-8 shrink-0">
           <div>
             <h1 className="text-3xl font-extrabold text-gray-900">Pesanan Aktif (Dapur)</h1>
@@ -79,7 +76,6 @@ export default function AdminDataPesanan() {
             </div>
           )}
         </div>
-      </div>
-    </div>
+      </AdminLayout>
   );
 }

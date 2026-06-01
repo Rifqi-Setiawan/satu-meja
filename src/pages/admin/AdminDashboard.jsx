@@ -2,7 +2,7 @@ import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { LogOut } from 'lucide-react';
 import { formatRupiah } from '../../data/mockData';
-import AdminSidebar from '../../components/AdminSidebar';
+import AdminLayout from '../../components/AdminLayout';
 
 export default function AdminDashboard() {
   const { user, getRestaurant, reservations } = useApp();
@@ -14,10 +14,7 @@ export default function AdminDashboard() {
   const todayRevenue = todayReservations.reduce((sum, res) => sum + res.totalAmount, 0);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      <AdminSidebar />
-      
-      <div className="flex-1 ml-64 p-8">
+    <AdminLayout>
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-extrabold text-gray-900">Dasbor Utama</h1>
@@ -82,7 +79,6 @@ export default function AdminDashboard() {
             </div>
           )}
         </div>
-      </div>
-    </div>
+      </AdminLayout>
   );
 }
