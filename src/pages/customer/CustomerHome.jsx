@@ -9,16 +9,26 @@ export default function CustomerHome() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('Semua');
 
-  const filters = ['Semua', 'Sepi', 'Rating Tinggi', 'Jarak Dekat', 'Promo'];
+  const filters = ['Semua', 'Kepadatan', 'Rating Tinggi', 'Jarak Dekat', 'Promo'];
 
-  const filteredRestaurants = restaurants.filter(r => {
+  let filteredRestaurants = restaurants.filter(r => {
     if (searchQuery && !r.name.toLowerCase().includes(searchQuery.toLowerCase())) return false;
     
-    if (activeFilter === 'Sepi' && r.density > 40) return false;
-    if (activeFilter === 'Rating Tinggi' && r.rating < 4.5) return false;
     if (activeFilter === 'Promo' && (!r.promos || r.promos.length === 0)) return false;
     return true;
   });
+
+  if (activeFilter === 'Kepadatan') {
+    filteredRestaurants.sort((a, b) => a.density - b.density);
+  } else if (activeFilter === 'Rating Tinggi') {
+    filteredRestaurants.sort((a, b) => b.rating - a.rating);
+  } else if (activeFilter === 'Jarak Dekat') {
+    filteredRestaurants.sort((a, b) => parseFloat(a.distance) - parseFloat(b.distance));
+  }
+
+  if (activeFilter === 'Promo') {
+    filteredRestaurants = filteredRestaurants.slice(0, 1);
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -85,7 +95,7 @@ export default function CustomerHome() {
                       {restaurant.emoji}
                       <div className={`absolute top-4 right-4 text-xs font-bold px-3 py-1.5 rounded-full flex items-center shadow-md ${densityInfo.bg} ${densityInfo.color}`}>
                         <div className={`w-2 h-2 rounded-full ${densityInfo.color.replace('text-', 'bg-')} mr-1.5 animate-pulse`} />
-                        {densityInfo.label}
+                        {densityInfo.label} {restaurant.density}%
                       </div>
                     </div>
                     
