@@ -59,7 +59,16 @@ export default function ReservationFlow() {
           <label className="block font-bold text-[var(--color-navy)] mb-2">Jam Kedatangan</label>
           <div className="relative">
             <Clock className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-muted)] w-5 h-5" />
-            <input type="time" value={time} onChange={(e) => setTime(e.target.value)} className="app-input pl-12 bg-[var(--color-background)] focus:bg-white" />
+            <select value={time} onChange={(e) => setTime(e.target.value)} className="app-input pl-12 bg-[var(--color-background)] focus:bg-white cursor-pointer">
+              <option value="" disabled>Pilih Jam</option>
+              {Array.from({ length: 24 }).flatMap((_, i) => {
+                const h = i.toString().padStart(2, '0');
+                return [
+                  <option key={`${h}:00`} value={`${h}:00`}>{`${h}:00`}</option>,
+                  <option key={`${h}:30`} value={`${h}:30`}>{`${h}:30`}</option>
+                ];
+              })}
+            </select>
           </div>
         </div>
       </div>
