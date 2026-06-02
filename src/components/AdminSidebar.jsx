@@ -23,19 +23,19 @@ export default function AdminSidebar({ onClose }) {
   };
 
   return (
-    <div className="w-64 bg-slate-900 h-screen text-slate-300 flex flex-col z-50 overflow-hidden">
-      <div className="p-6 border-b border-slate-800 flex justify-between items-center">
+    <div className="w-64 bg-[var(--color-navy)] h-screen text-white flex flex-col z-50 overflow-hidden shadow-2xl">
+      <div className="p-6 border-b border-white/10 flex justify-between items-center bg-[var(--color-navy)]/90 backdrop-blur-sm">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-bold text-white shadow-lg">
+          <div className="w-10 h-10 bg-[var(--color-primary)] rounded-xl flex items-center justify-center font-bold text-white shadow-lg">
             {restaurant?.name.charAt(0) || 'R'}
           </div>
           <div className="overflow-hidden">
             <h2 className="font-bold text-white truncate max-w-[120px]">{restaurant?.name}</h2>
-            <p className="text-xs text-slate-500 truncate">Admin Portal</p>
+            <p className="text-xs text-[var(--color-primary-soft)] truncate">Admin Portal</p>
           </div>
         </div>
         {onClose && (
-          <button onClick={onClose} className="md:hidden p-1 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800">
+          <button onClick={onClose} className="md:hidden p-1 text-[var(--color-primary-soft)] hover:text-white rounded-lg hover:bg-white/10 transition">
             <X className="w-5 h-5" />
           </button>
         )}
@@ -49,10 +49,10 @@ export default function AdminSidebar({ onClose }) {
             <button
               key={idx}
               onClick={() => handleNavigation(item.route)}
-              className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
+              className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg transition-all ${
                 isActive 
-                  ? 'bg-blue-600 text-white font-semibold shadow-md' 
-                  : 'hover:bg-slate-800 hover:text-white'
+                  ? 'bg-[var(--color-primary)] text-white font-semibold shadow-md' 
+                  : 'text-white/70 hover:bg-white/5 hover:text-white'
               }`}
             >
               <Icon className="w-5 h-5" />
@@ -62,10 +62,10 @@ export default function AdminSidebar({ onClose }) {
         })}
       </div>
 
-      <div className="p-4 border-t border-slate-800">
+      <div className="p-4 border-t border-white/10">
         <button
           onClick={logout}
-          className="w-full flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-red-500/10 hover:text-red-400 transition-colors text-slate-400"
+          className="w-full flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[var(--color-terracotta)]/20 hover:text-[var(--color-terracotta)] transition-colors text-white/70"
         >
           <LogOut className="w-5 h-5" />
           <span className="text-sm font-medium">Keluar</span>

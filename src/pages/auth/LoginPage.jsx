@@ -26,13 +26,13 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-50 md:bg-white">
       {/* Left Branding for Desktop */}
-      <div className="hidden md:flex md:w-1/2 bg-orange-500 flex-col justify-center items-center p-12 text-white relative overflow-hidden">
+      <div className="hidden md:flex md:w-1/2 bg-[var(--color-primary)] flex-col justify-center items-center p-12 text-white relative overflow-hidden">
         <div className="z-10 text-center max-w-md">
           <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-            <Utensils className="w-10 h-10 text-orange-500" />
+            <Utensils className="w-10 h-10 text-[var(--color-primary)]" />
           </div>
-          <h1 className="text-4xl font-extrabold mb-4">Satu Meja</h1>
-          <p className="text-orange-100 text-lg">Pesan meja cepat tanpa ribet.</p>
+          <h1 className="text-4xl font-extrabold mb-4 text-white">Satu Meja</h1>
+          <p className="text-[var(--color-primary-soft)] text-lg">Pesan meja cepat tanpa ribet.</p>
         </div>
       </div>
 
@@ -46,7 +46,7 @@ export default function LoginPage() {
         </div>
 
         <div className="p-6 md:p-12 flex-1 flex flex-col justify-center max-w-lg mx-auto w-full">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Selamat Datang!</h2>
+          <h2 className="text-3xl font-extrabold text-[var(--color-navy)] mb-2">Selamat Datang!</h2>
           <p className="text-gray-500 mb-8 text-lg">Masuk untuk melanjutkan reservasi meja favoritmu.</p>
 
           <form onSubmit={handleLogin} className="space-y-5">
@@ -60,7 +60,7 @@ export default function LoginPage() {
                   type="text"
                   value={identifier}
                   onChange={(e) => setIdentifier(e.target.value)}
-                  className="block w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-gray-50 hover:bg-gray-100 focus:bg-white text-gray-900 transition-colors text-base"
+                  className="block w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] bg-gray-50 hover:bg-gray-100 focus:bg-white text-gray-900 transition-colors text-base"
                   placeholder="Contoh: budi@email.com"
                 />
               </div>
@@ -76,18 +76,18 @@ export default function LoginPage() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-gray-50 hover:bg-gray-100 focus:bg-white text-gray-900 transition-colors text-base"
+                  className="block w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] bg-gray-50 hover:bg-gray-100 focus:bg-white text-gray-900 transition-colors text-base"
                   placeholder="••••••••"
                 />
               </div>
               <div className="text-right mt-2">
-                <a href="#" className="text-sm text-orange-600 font-bold hover:underline">Lupa Password?</a>
+                <a href="#" className="text-sm text-[var(--color-terracotta)] font-bold hover:underline">Lupa Password?</a>
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full bg-orange-500 text-white font-bold py-4 px-4 rounded-xl hover:bg-orange-600 transition shadow-lg shadow-orange-200 active:scale-95 mt-8 text-lg"
+              className="w-full bg-[var(--color-primary)] text-white font-bold py-4 px-4 rounded-xl hover:brightness-95 transition shadow-lg active:scale-95 mt-8 text-lg"
             >
               Masuk Sekarang
             </button>
@@ -95,7 +95,7 @@ export default function LoginPage() {
 
           <div className="mt-8 text-center text-gray-600">
             Belum punya akun?{' '}
-            <button onClick={() => navigate('register')} className="text-orange-600 font-bold hover:underline">
+            <button onClick={() => navigate('register')} className="text-[var(--color-primary)] font-bold hover:underline">
               Daftar di sini
             </button>
           </div>

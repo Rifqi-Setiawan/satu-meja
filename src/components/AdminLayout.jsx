@@ -9,7 +9,7 @@ export default function AdminLayout({ children, contentClassName = '' }) {
   const restaurant = getRestaurant(user?.restaurantId || 1);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen app-bg flex">
       {/* Mobile Sidebar Overlay */}
       {isMobileMenuOpen && (
         <div 
@@ -25,16 +25,16 @@ export default function AdminLayout({ children, contentClassName = '' }) {
 
       <div className="flex-1 md:ml-64 flex flex-col min-h-screen w-full relative">
         {/* Mobile Header */}
-        <div className="md:hidden bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between sticky top-0 z-30">
+        <div className="md:hidden bg-white border-b border-[var(--color-border)] px-4 py-3 flex items-center justify-between sticky top-0 z-30 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white shadow-sm text-sm">
+            <div className="w-8 h-8 bg-[var(--color-primary)] rounded-lg flex items-center justify-center font-bold text-white shadow-sm text-sm">
               {restaurant?.name.charAt(0) || 'R'}
             </div>
-            <h2 className="font-bold text-gray-900 text-sm truncate max-w-[180px]">{restaurant?.name}</h2>
+            <h2 className="font-bold text-[var(--color-navy)] text-sm truncate max-w-[180px]">{restaurant?.name}</h2>
           </div>
           <button 
             onClick={() => setIsMobileMenuOpen(true)}
-            className="p-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+            className="p-2 rounded-lg bg-[var(--color-background)] text-[var(--color-charcoal)] hover:bg-[var(--color-border)] transition-colors"
           >
             <Menu className="w-5 h-5" />
           </button>

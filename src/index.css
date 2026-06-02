@@ -1,6 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #8FA3EF;
+  --color-primary-soft: #D5E0FF;
+  --color-navy: #1E2A4A;
+  --color-terracotta: #C84B31;
+  --color-charcoal: #2D2D2D;
+  --color-app-bg: #F7F9FF;
+  --color-app-border: #E5EAF8;
+  --color-app-muted: #6B7280;
+}
+
+:root {
+  --color-primary: #8FA3EF;
+  --color-primary-soft: #D5E0FF;
+  --color-navy: #1E2A4A;
+  --color-terracotta: #C84B31;
+  --color-white: #FFFFFF;
+  --color-charcoal: #2D2D2D;
+  --color-background: #F7F9FF;
+  --color-border: #E5EAF8;
+  --color-muted: #6B7280;
+}
+
 * {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   -webkit-tap-highlight-color: transparent;
@@ -8,10 +31,50 @@
 
 body {
   margin: 0;
-  background-color: #f9fafb;
+  background-color: var(--color-background);
+  color: var(--color-charcoal);
 }
 
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 20px); }
+
+/* Utility Classes */
+@layer components {
+  .app-bg {
+    @apply bg-[var(--color-background)] min-h-screen;
+  }
+  
+  .app-card {
+    @apply bg-white rounded-2xl border border-[var(--color-border)] shadow-sm;
+  }
+  
+  .app-input {
+    @apply w-full px-4 py-3 rounded-xl border border-[var(--color-border)] bg-white text-[var(--color-navy)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all duration-200 placeholder:text-[var(--color-muted)];
+  }
+  
+  .app-button-primary {
+    @apply w-full flex items-center justify-center py-3.5 px-4 rounded-xl font-semibold text-white bg-[var(--color-primary)] hover:bg-[#7b91e3] transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-sm;
+  }
+  
+  .app-button-secondary {
+    @apply w-full flex items-center justify-center py-3.5 px-4 rounded-xl font-semibold text-[var(--color-primary)] bg-white border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:bg-[var(--color-background)] transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .app-section {
+    @apply py-6;
+  }
+  
+  .app-container {
+    @apply max-w-md mx-auto px-4;
+  }
+  
+  .app-heading {
+    @apply font-bold text-[var(--color-navy)];
+  }
+  
+  .app-muted {
+    @apply text-[var(--color-muted)] text-sm;
+  }
+}

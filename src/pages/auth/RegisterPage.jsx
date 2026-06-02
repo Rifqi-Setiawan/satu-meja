@@ -36,13 +36,13 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-50 md:bg-white">
       {/* Left Branding for Desktop */}
-      <div className="hidden md:flex md:w-1/2 bg-orange-500 flex-col justify-center items-center p-12 text-white relative overflow-hidden">
+      <div className="hidden md:flex md:w-1/2 bg-[var(--color-primary)] flex-col justify-center items-center p-12 text-white relative overflow-hidden">
         <div className="z-10 text-center max-w-md">
           <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-            <Utensils className="w-10 h-10 text-orange-500" />
+            <Utensils className="w-10 h-10 text-[var(--color-primary)]" />
           </div>
-          <h1 className="text-4xl font-extrabold mb-4">Satu Meja</h1>
-          <p className="text-orange-100 text-lg">Bergabung dan nikmati kemudahan reservasi di ujung jari Anda.</p>
+          <h1 className="text-4xl font-extrabold mb-4 text-white">Satu Meja</h1>
+          <p className="text-[var(--color-primary-soft)] text-lg">Bergabung dan nikmati kemudahan reservasi di ujung jari Anda.</p>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ export default function RegisterPage() {
         </div>
 
         <div className="p-6 md:p-12 flex-1 flex flex-col justify-center max-w-lg mx-auto w-full">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Buat Akun Baru</h2>
+          <h2 className="text-3xl font-extrabold text-[var(--color-navy)] mb-2">Buat Akun Baru</h2>
           <p className="text-gray-500 mb-8 text-lg">Lengkapi data diri Anda di bawah ini.</p>
 
           <form onSubmit={handleRegister} className="space-y-4">
@@ -72,7 +72,7 @@ export default function RegisterPage() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-gray-50"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] bg-gray-50"
                     placeholder="Budi Santoso"
                   />
                 </div>
@@ -89,7 +89,7 @@ export default function RegisterPage() {
                     name="username"
                     value={formData.username}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-gray-50"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] bg-gray-50"
                     placeholder="budisantoso"
                   />
                 </div>
@@ -108,7 +108,7 @@ export default function RegisterPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-gray-50"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] bg-gray-50"
                     placeholder="081234567890"
                   />
                 </div>
@@ -125,7 +125,7 @@ export default function RegisterPage() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-gray-50"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] bg-gray-50"
                     placeholder="budi@email.com"
                   />
                 </div>
@@ -144,7 +144,7 @@ export default function RegisterPage() {
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-gray-50"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] bg-gray-50"
                     placeholder="••••••••"
                   />
                 </div>
@@ -161,7 +161,7 @@ export default function RegisterPage() {
                     name="confirmPassword"
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-gray-50"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] bg-gray-50"
                     placeholder="••••••••"
                   />
                 </div>
@@ -170,7 +170,7 @@ export default function RegisterPage() {
 
             <button
               type="submit"
-              className="w-full bg-orange-500 text-white font-bold py-4 px-4 rounded-xl hover:bg-orange-600 transition shadow-lg shadow-orange-200 active:scale-95 mt-6 text-lg"
+              className="w-full bg-[var(--color-primary)] text-white font-bold py-4 px-4 rounded-xl hover:brightness-95 transition shadow-lg active:scale-95 mt-6 text-lg"
             >
               Daftar Sekarang
             </button>
@@ -178,7 +178,7 @@ export default function RegisterPage() {
 
           <div className="mt-8 text-center text-gray-600 pb-10 md:pb-0">
             Sudah punya akun?{' '}
-            <button onClick={() => navigate('login')} className="text-orange-600 font-bold hover:underline">
+            <button onClick={() => navigate('login')} className="text-[var(--color-primary)] font-bold hover:underline">
               Masuk
             </button>
           </div>
