@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
-import { Utensils, Search, UserCircle, LogOut } from 'lucide-react';
+import { Search, UserCircle, LogOut } from 'lucide-react';
 
 export default function CustomerNavbar() {
   const { navigate, user, logout } = useApp();
@@ -11,10 +11,10 @@ export default function CustomerNavbar() {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <div className="flex items-center cursor-pointer" onClick={() => navigate('customerHome')}>
-            <div className="w-10 h-10 bg-[var(--color-primary)] rounded-xl flex items-center justify-center mr-3 shadow-md">
-              <Utensils className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3 shadow-md overflow-hidden">
+              <img src="/merah.png" alt="Cari Meja Logo" className="w-full h-full object-cover" />
             </div>
-            <span className="font-extrabold text-2xl text-[var(--color-navy)] tracking-tight">Satu Meja</span>
+            <span className="font-extrabold text-2xl text-[var(--color-navy)] tracking-tight">Cari Meja</span>
           </div>
 
           {/* Desktop Search (Mock) */}

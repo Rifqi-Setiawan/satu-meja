@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { ArrowLeft, Mail, Lock, Utensils } from 'lucide-react';
+import { ArrowLeft, Mail, Lock } from 'lucide-react';
 
 export default function LoginPage() {
   const { login, navigate, showToast } = useApp();
@@ -28,10 +28,10 @@ export default function LoginPage() {
       {/* Left Branding for Desktop */}
       <div className="hidden md:flex md:w-1/2 bg-[var(--color-primary)] flex-col justify-center items-center p-12 text-white relative overflow-hidden">
         <div className="z-10 text-center max-w-md">
-          <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-            <Utensils className="w-10 h-10 text-[var(--color-primary)]" />
+          <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl overflow-hidden">
+            <img src="/merah.png" alt="Cari Meja Logo" className="w-full h-full object-cover" />
           </div>
-          <h1 className="text-4xl font-extrabold mb-4 text-white">Satu Meja</h1>
+          <h1 className="text-4xl font-extrabold mb-4 text-white">Cari Meja</h1>
           <p className="text-[var(--color-primary-soft)] text-lg">Pesan meja cepat tanpa ribet.</p>
         </div>
       </div>

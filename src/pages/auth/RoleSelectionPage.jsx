@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
-import { Store, UserCircle, Utensils } from 'lucide-react';
+import { Store, UserCircle } from 'lucide-react';
 
 export default function RoleSelectionPage() {
   const { user, setRole, navigate } = useApp();
@@ -18,8 +18,8 @@ export default function RoleSelectionPage() {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 md:p-12">
         <div className="flex flex-col items-center mb-10 text-center">
-          <div className="w-16 h-16 bg-[var(--color-primary-soft)] rounded-full flex items-center justify-center mb-4">
-            <Utensils className="w-8 h-8 text-[var(--color-primary)]" />
+          <div className="w-20 h-20 bg-[var(--color-primary-soft)] rounded-full flex items-center justify-center mb-4 overflow-hidden">
+            <img src="/merah.png" alt="Cari Meja Logo" className="w-full h-full object-cover" />
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)] mb-2">Pilih Peran Anda</h2>
           <p className="text-[var(--color-muted)] text-lg">

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
-import { Utensils } from 'lucide-react';
 
 export default function WelcomePage() {
   const { navigate } = useApp();
@@ -19,10 +18,10 @@ export default function WelcomePage() {
         </div>
         
         <div className="z-10 text-center max-w-md">
-          <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl">
-            <Utensils className="w-12 h-12 text-[var(--color-primary)]" />
+          <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl overflow-hidden">
+            <img src="/merah.png" alt="Cari Meja Logo" className="w-full h-full object-cover" />
           </div>
-          <h1 className="text-5xl font-extrabold mb-6 text-white">Satu Meja</h1>
+          <h1 className="text-5xl font-extrabold mb-6 text-white">Cari Meja</h1>
           <p className="text-[var(--color-primary-soft)] text-xl leading-relaxed">
             Platform reservasi meja restoran dan kafe favoritmu dengan mudah, cepat, dan praktis.
           </p>
@@ -34,10 +33,10 @@ export default function WelcomePage() {
         <div className="w-full max-w-md">
           {/* Mobile branding only visible on small screens */}
           <div className="md:hidden flex flex-col items-center mb-10 text-center">
-            <div className="w-16 h-16 bg-[var(--color-primary)] rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-              <Utensils className="w-8 h-8 text-white" />
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg overflow-hidden">
+              <img src="/merah.png" alt="Cari Meja Logo" className="w-full h-full object-cover" />
             </div>
-            <h1 className="text-4xl font-extrabold text-[var(--color-navy)] mb-2">Satu Meja</h1>
+            <h1 className="text-4xl font-extrabold text-[var(--color-navy)] mb-2">Cari Meja</h1>
             <p className="text-gray-500">Reservasi meja restoran favoritmu.</p>
           </div>
 
